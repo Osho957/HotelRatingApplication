@@ -22,6 +22,26 @@ spring:
   profiles:
     active: default
 
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: https://dev-38965811.okta.com/oauth2/default
+      client:
+        registration:
+          my-internal-client:
+            provider: okta
+            authorization-grant-type: client_credentials
+            scope: internal
+            client-id: 0oaebpwdynYtbGfiF5d7
+            client-secret: ytVpRfcYctCkcE8bPY3MXO38NvAn1ZG-deAquTuL4XUVhB3NkUvxU0PdNp5kfDHY
+        provider:
+          okta:
+            issuer-uri: https://dev-38965811.okta.com/oauth2/default
+
+
+
+
 
 # circuit breaker properties
 
@@ -67,7 +87,10 @@ resilience4j:
         limit-for-period: 2
         timeout-duration: 2s
 
-
+okta:
+  oauth2:
+    issuer: https://dev-38965811.okta.com/oauth2/default
+    audience: api://default
 
 
 # fetching from config server
