@@ -34,3 +34,12 @@ spring:
 
 server:
   port: 8084
+
+# okta configs for api gateway
+okta:
+  oauth2:
+    issuer: https://dev-38965811.okta.com/oauth2/default
+    audience: api://default
+    client-id: 0oaebpwdynYtbGfiF5d7
+    client-secret: ytVpRfcYctCkcE8bPY3MXO38NvAn1ZG-deAquTuL4XUVhB3NkUvxU0PdNp5kfDHY
+    scopes: openid, profile, email, offline_access
